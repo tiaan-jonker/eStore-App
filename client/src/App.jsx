@@ -1,7 +1,9 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import HomePage from './pages/HomePage'
+import ProductPage from './pages/ProductPage'
 import Footer from './components/Footer'
 
 const App = () => {
@@ -10,8 +12,10 @@ const App = () => {
       <Header />
       <main className='py-5'>
         <Container>
-          <h1>Welcome to eStore</h1>
-          <HomePage />
+          <Routes>
+            <Route path='/' element={<HomePage />} exact />
+            <Route path='/product/:id' element={<ProductPage />} />
+          </Routes>
         </Container>
       </main>
       <Footer />
