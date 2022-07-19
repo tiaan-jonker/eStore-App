@@ -1,13 +1,12 @@
-const express = require('express')
-const dotenv = require('dotenv')
-const json = require('body-parser')
-const colors = require('colors')
-const products = require('./data/products')
+import express from 'express'
+import dotenv from 'dotenv'
+import connectDB from './config/db.js'
+import colors from 'colors'
+import products from './data/products.js'
 
 dotenv.config()
-
+connectDB()
 const server = express()
-server.use(json())
 
 server.get('/', (req, res) => {
   res.send('Up and running')
