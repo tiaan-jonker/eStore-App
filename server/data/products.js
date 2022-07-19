@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Airpods Wireless Bluetooth Headphones',
     image: '/images/airpods.jpg',
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'AT-At Walker',
     image: '/images/atat.jpg',
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 3,
   },
   {
-    _id: '3',
     name: 'Blurrg',
     image: '/images/blurrg.jpg',
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 0,
   },
   {
-    _id: '4',
     name: 'Death Star',
     image: '/images/deathstar.jpg',
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 245,
   },
   {
-    _id: '5',
     name: 'Lightsaber',
     image: '/images/lightsaber.jpg',
     description:
@@ -65,7 +60,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: '6',
     name: 'X-Wing',
     image: '/images/xwing.jpg',
     description:
