@@ -6,7 +6,7 @@ import {
 
 const initialState = { products: [] }
 
-function productReducer(state = initialState, action) {
+function productListReducer(state = initialState, action) {
   switch (action.type) {
     case PRODUCT_LIST_REQ:
       return { loading: true, products: [] }
@@ -19,4 +19,4 @@ function productReducer(state = initialState, action) {
   }
 }
 
-export default productReducer
+export default productListReducer
