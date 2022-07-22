@@ -8,11 +8,11 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 
 const ProductPage = () => {
+  const [quantity, setQuantity] = useState(1)
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { id } = useParams()
-
-  const [quantity, setQuantity] = useState(1)
 
   const productDetail = useSelector((state) => state.productDetail)
 
@@ -22,12 +22,12 @@ const ProductPage = () => {
     dispatch(listProductDetails(id))
   }, [dispatch])
 
-  if (loading) return <Loader />
-  if (error) return <Message variant='danger'>{error}</Message>
-
   const handleAddToCart = () => {
     navigate(`/cart/${id}?quantity=${quantity}`)
   }
+
+  if (loading) return <Loader />
+  if (error) return <Message variant='danger'>{error}</Message>
 
   return (
     <div>
@@ -82,7 +82,7 @@ const ProductPage = () => {
                         <Form.Control
                           as='select'
                           value={quantity}
-                          onChange={(e) => setQuantity(e.target.value)}
+                          onChange={(evt) => setQuantity(evt.target.value)}
                         >
                           {[...Array(product.stock).keys()].map((qty) => (
                             <option key={qty + 1} value={qty + 1}>

@@ -26,6 +26,14 @@ function cartReducer(state = initialState, action) {
         ),
       }
 
+    case CART_REMOVE_ITEM:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter(
+          (el) => el.product !== action.payload
+        ),
+      }
+
     default:
       return state
   }
