@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { PasswordManager } from '../utils/passwordManager.js'
 const { Schema } = mongoose
 
 const userSchema = new Schema(
@@ -26,6 +27,14 @@ const userSchema = new Schema(
     timestamps: true,
   }
 )
+
+userSchema.pre('save', async function (done) {
+  if (this.isModified('password')) {
+    const hashed = await PasswordManager.toHash(this.get('password'))
+    this.set('password', hashed)
+  }
+  done()
+})
 
 const User = mongoose.model('User', userSchema)
 
