@@ -8,8 +8,13 @@ const cartItemsInLocalStorage = localStorage.getItem('cartItem')
   ? JSON.parse(localStorage.getItem('cartItems'))
   : []
 
+const userInfoInLocalStorage = localStorage.getItem('userInfo')
+  ? JSON.parse(localStorage.getItem('userInfo'))
+  : null
+
 const initialState = {
   cart: { cartItems: cartItemsInLocalStorage },
+  userLogin: { userInfo: userInfoInLocalStorage },
 }
 
 const store = createStore(
