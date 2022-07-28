@@ -4,6 +4,7 @@ import {
   authUser,
   registerUser,
   getUserProfile,
+  updateUserProfile,
 } from '../controllers/userController.js'
 import { authProtect } from '../middleware/authMiddleware.js'
 
@@ -20,6 +21,9 @@ router.route('/login').post(authUser)
 //@desc     Get user profile
 //@route    GET /api/v1/users/profile
 //@access   Private
-router.route('/profile').get(authProtect, getUserProfile)
+router
+  .route('/profile')
+  .get(authProtect, getUserProfile)
+  .put(authProtect, updateUserProfile)
 
 export default router

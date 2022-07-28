@@ -5,9 +5,9 @@ import {
   USER_LOGOUT,
 } from '../constants/userConstants'
 
-const initialState = { product: {} }
+const initialState = {}
 
-function userReducer(state = initialState, action) {
+function userLoginReducer(state = initialState, action) {
   switch (action.type) {
     case USER_LOGIN_REQ:
       return { loading: true }
@@ -22,4 +22,4 @@ function userReducer(state = initialState, action) {
   }
 }
 
-export default userReducer
+export default userLoginReducer
